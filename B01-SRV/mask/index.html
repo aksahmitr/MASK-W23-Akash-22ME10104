@@ -1,0 +1,49 @@
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="img"></div>
+    <div id="box">
+        <form class = "form">
+            <div class="input">
+                <label for="name">NAME: </label>
+                <br>
+                <input type="text" id="name">
+                <br>
+                
+                <label for="waifu">FAVOURITE WAIFU: </label>
+                <br>
+                <input type="text" id="waifu">
+                <br>
+                
+                <label for="aadhaar">AADHAAR NO: </label>
+                <br>
+                <input type="number" id="aadhaar">
+                <br>
+            </div>
+            
+
+            <button type="button" onclick="submitData()">SUBMIT</button>
+
+        </form>
+    </div>
+</body>
+</html>
+
+
+<script>
+    async function submitData() {
+        await axios.post("/form", {
+            "name": document.getElementById("name").value,
+            "salary": document.getElementById("waifu").value,
+            "aadhaar": document.getElementById("aadhaar").value
+        });
+    }
+</script>
